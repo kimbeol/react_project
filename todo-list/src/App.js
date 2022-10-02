@@ -73,12 +73,12 @@ class App extends Component {
       })
    }
 
-   // handleRemove = (id) => {
-   //    const { todos } = this.state;
-   //    this.setState ({
-   //       todos: todos.filter(todo => todo.id !== id)
-   //    });
-   // }
+   handleRemove = (id) => {
+      const { todos } = this.state;
+      this.setState ({ //자바스크립트 배열의 내장함수 filter
+         todos: todos.filter(todo => todo.id !== id)
+      });
+   }
 
    render() {
       const { input, todos } = this.state;
@@ -86,7 +86,8 @@ class App extends Component {
          handleChange,
          handleCreate,
          handleKeyPress,
-         handleToggle
+         handleToggle,
+         handleRemove
       } = this;
 
       // const numbers = [1,2,3,4,5];
@@ -102,7 +103,7 @@ class App extends Component {
                onCreate={handleCreate}
              />
          )}>
-            <TodoItemList todos={todos} onToggle={handleToggle}/>
+            <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
          </TodoListTemplate>
       );
    }
