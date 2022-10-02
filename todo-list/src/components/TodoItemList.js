@@ -12,6 +12,7 @@ class TodoItemList extends Component {
                     text={text}
                     checked={checked}
                     onToggle={onToggle}
+                    onRemove={onRemove}
                     key={id}
                 />
             )
