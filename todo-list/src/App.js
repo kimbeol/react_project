@@ -82,7 +82,7 @@ class App extends Component {
 
    render() {
       const { input, todos } = this.state;
-      const { // 비구조화 할당 this.객체 대신
+      const { // 비구조화 할당 this.객체 대신 
          handleChange,
          handleCreate,
          handleKeyPress,
