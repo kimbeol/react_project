@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './TodoItem.css';
 
 class TodoItem extends Component {
+    // 컴포넌트 최적화
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.checked !== nextProps.checked;
+    }
     /**
      * 이 컴포넌트는 총 5가지의 props 를 전달 받음
      * 1.text : todo 내용
@@ -14,7 +18,7 @@ class TodoItem extends Component {
      */
     render() {
         const { text, checked, id, onToggle, onRemove } = this.props;
-
+       
         return (
             <div className="todo-item" onClick={() => onToggle(id)}>
                 <div className="remove" onClick={(e) => {

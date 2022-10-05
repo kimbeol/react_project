@@ -3,7 +3,7 @@ import TodoListTemplate from './components/TodoListTemplate';
 import Form from './components/Form';
 import TodoItemList from './components/TodoItemList';
 
-class App extends Component {
+class App extends Component {  
 
    id = 3
 
@@ -36,7 +36,7 @@ class App extends Component {
    }
 
    handleKeyPress = (e) => {
-      // 눌러진 키가 Enter 연 handleCreate 호출
+      // 눌러진 키가 Enter 면 handleCreate 호출
       if(e.key === 'Enter') {
          this.handleCreate();
       }
